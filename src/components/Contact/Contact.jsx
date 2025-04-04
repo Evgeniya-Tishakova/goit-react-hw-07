@@ -1,12 +1,11 @@
 import css from "./Contact.module.css";
 import { BsPersonFill } from "react-icons/bs";
 import { FaPhoneAlt } from "react-icons/fa";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Contact({ id, name, number }) {
   const dispatch = useDispatch();
-  const contacts = useSelector((state) => state.contacts.items);
 
   const handleDelete = () => {
     dispatch(deleteContact(id));
